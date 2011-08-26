@@ -8,6 +8,10 @@ install on another machine
 	git submodule init
 	git submodule update
 
+Generate help for all plugins (using a command provided by pathogen)
+
+  :Helptags
+
 
 update and pull all submodules
 ------------------------------
