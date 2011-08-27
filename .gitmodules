@@ -18,3 +18,6 @@
 	path = bundle/vim-commentary
 	url = http://github.com/tpope/vim-commentary.git
   ignore = dirty
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = http://github.com/ervandew/supertab
