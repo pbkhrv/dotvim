@@ -60,7 +60,7 @@ nnoremap <C-l> <C-w>l
 " set default font
 set guifont=Monaco:h12
 " color molokai
-color slate
+color herald
 
 nmap <silent> <Leader>t :CommandT<CR>
 
@@ -110,3 +110,10 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 " highlight Pmenu ctermbg=238 gui=bold
 highlight PMenu gui=bold guibg=#CECECE guifg=#444444
 
+" disable toolbar
+"if has("gui_running")
+"  set guioptions=-t
+"endif 
+
+" wipe out fugitive buffers that are not being used
+autocmd BufReadPost fugitive://* set bufhidden=delete
