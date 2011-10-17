@@ -27,5 +27,5 @@ update and pull all submodules
 add a new submodule
 -------------------
 
-  $ cd ~/.vim
-  $ git submodule add <github-url> bundle/<local-folder-for-plugin>
+	$ cd ~/.vim
+	$ git submodule add <github-url> bundle/<local-folder-for-plugin>
