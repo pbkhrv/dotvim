@@ -22,3 +22,10 @@ update and pull all submodules
 	commit update
 
 	$ git commit -a -m "update submodules" 
+
+
+add a new submodule
+-------------------
+
+  $ cd ~/.vim
+  $ git submodule add <github-url> bundle/<local-folder-for-plugin>
