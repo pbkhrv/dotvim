@@ -23,7 +23,7 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set relativenumber
-set undofile
+" set undofile
 
 let mapleader = ","
 
@@ -117,3 +117,10 @@ highlight PMenu gui=bold guibg=#CECECE guifg=#444444
 
 " wipe out fugitive buffers that are not being used
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+"This allows for change paste motion cp{motion}
+nmap <silent> cp :set opfunc=ChangePaste<CR>g@
+function! ChangePaste(type, ...)
+    silent exe "normal! `[v`]\"_c"
+    silent exe "normal! p"
+endfunction
