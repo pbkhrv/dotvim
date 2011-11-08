@@ -63,6 +63,8 @@ set guifont=Monaco:h12
 color herald
 
 nmap <silent> <Leader>t :CommandT<CR>
+" Open command-t window with list of buffers (not files on disk)
+nmap <silent> <Leader>b :CommandTBuffer<CR>
 
 " Fast editing of the .gvimrc file
 map <leader>e :e! ~/.gvimrc<cr>
