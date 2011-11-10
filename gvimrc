@@ -126,3 +126,9 @@ function! ChangePaste(type, ...)
     silent exe "normal! `[v`]\"_c"
     silent exe "normal! p"
 endfunction
+
+" set file type to Ruby
+command! FR set filetype=ruby
+
+" open RubyRunner results buffer below code buffer
+let g:RubyRunner_open_below = 1

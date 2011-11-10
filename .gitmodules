@@ -33,3 +33,6 @@
 [submodule "bundle/argtextobj"]
 	path = bundle/argtextobj
 	url = https://github.com/vim-scripts/argtextobj.vim.git
+[submodule "bundle/vim-ruby-runner"]
+	path = bundle/vim-ruby-runner
+	url = http://github.com/byteclub/vim-ruby-runner.git
