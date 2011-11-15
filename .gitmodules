@@ -36,3 +36,6 @@
 [submodule "bundle/vim-ruby-runner"]
 	path = bundle/vim-ruby-runner
 	url = http://github.com/byteclub/vim-ruby-runner.git
+[submodule "bundle/vim-git-branch-session"]
+	path = bundle/vim-git-branch-session
+	url = http://github.com/byteclub/vim-git-branch-session.git
