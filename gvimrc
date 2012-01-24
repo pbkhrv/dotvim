@@ -130,6 +130,10 @@ command! FR set filetype=ruby
 " open RubyRunner results buffer below code buffer
 let g:RubyRunner_open_below = 1
 
+" open new splits below current
+" http://vim.wikia.com/wiki/Opening_new_buffer_below_the_current
+set splitbelow
+
 " function to wipe out all buffers that are not currently shown anywhere
 " http://stackoverflow.com/questions/1534835/how-do-i-close-all-buffers-that-arent-shown-in-a-window-in-vim
 function! Wipeout()
@@ -164,6 +168,8 @@ function! Wipeout()
     execute 'tabnext' l:currentTab
   endtry
 endfunction
+
+command! Cleanup call Wipeout()
 
 " load .vimrc-local if it exists
 if !empty(glob("~/.vimrc-local"))
