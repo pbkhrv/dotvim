@@ -175,3 +175,22 @@ command! Cleanup call Wipeout()
 if !empty(glob("~/.vimrc-local"))
   source ~/.vimrc-local
 endif
+
+" prettify json file
+map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
+
+" go to previous file in buffer
+" http://vimbits.com/bits/181
+nmap <leader><leader> :b#<cr>
+
+" The Smash Escape - type jk or kj to exit edit mode
+" http://vimbits.com/bits/180
+inoremap jk <Esc>
+inoremap kj <Esc>
+
+" Makes C-j & C-k scroll forward/back in history in command-line mode, and makes C-a & C-e act as Home/End in command-line mode.
+" http://vimbits.com/bits/30
+cnoremap <C-j> <t_kd>
+cnoremap <C-k> <t_ku>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
