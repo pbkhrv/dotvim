@@ -204,9 +204,28 @@ noremap <space> :set hlsearch! hlsearch?<CR>
 map Q @@
 
 " Highlight trailing whitespace
+" and evil tabs
+" plus my toggle code
 " http://vimbits.com/bits/259
-highlight WhitespaceEOL ctermbg=Red guibg=Red
-match WhitespaceEOL /\s\+$/
+function! ToggleEvilCharacters()
+  if exists("b:evil_chars_hi") && b:evil_chars_hi
+    highlight clear WhitespaceEOL
+    highlight clear TabsAreEvil
+    let b:evil_chars_hi = 0
+    echo "evil chars highlight off"
+  else
+    highlight WhitespaceEOL ctermbg=Red guibg=Red
+    match WhitespaceEOL /\s\+$/
+
+    highlight TabsAreEvil ctermbg=Yellow guibg=Yellow
+    2match TabsAreEvil /\t\+/
+
+    let b:evil_chars_hi = 1
+    echo "evil chars highlight on"
+  endif
+endfunction
+
+nnoremap <silent> <CR> :call ToggleEvilCharacters()<CR>
 
 " Expand path of current file in command mode
 " (there is already a variable to print file name as well: @%)
@@ -233,3 +252,7 @@ noremap <leader>G Go
 " to figure out how to specify keys that can be used for mapping
 " http://vimbits.com/bits/19
 nnoremap <D-8> *<C-O>:AckFromSearch!<CR>
+
+" replace tabs with 4 or 2 spaces
+command! Tabs4spaces perldo s/\t/    /g
+command! Tabs2spaces perldo s/\t/  /g
