@@ -88,10 +88,10 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
@@ -194,3 +194,42 @@ cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
+
+" use space to toggle search highlights
+" http://vimbits.com/bits/52
+noremap <space> :set hlsearch! hlsearch?<CR>
+
+" Map Q to repeat the last recorded macro
+" http://vimbits.com/bits/263
+map Q @@
+
+" Highlight trailing whitespace
+" http://vimbits.com/bits/259
+highlight WhitespaceEOL ctermbg=Red guibg=Red
+match WhitespaceEOL /\s\+$/
+
+" Expand path of current file in command mode
+" (there is already a variable to print file name as well: @%)
+" http://vimbits.com/bits/199
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+" Use <C-h> and <C-l> to move left/right in insert mode
+" mah vimbits
+" http://vimbits.com/bits/277
+" inoremap <C-h> <left>
+" inoremap <C-l> <right>
+
+" open/close quotes and doublequotes like textmate does
+" http://vimbits.com/bits/165
+" noremap! "" ""<left>
+" noremap! '' ''<left>
+
+" press <leader>G to go to the end of teh current file and insert new line
+" below
+noremap <leader>G Go
+
+" Highlight word at cursor and then Ack it. (cmd-8)
+" :help key-notation
+" to figure out how to specify keys that can be used for mapping
+" http://vimbits.com/bits/19
+nnoremap <D-8> *<C-O>:AckFromSearch!<CR>
