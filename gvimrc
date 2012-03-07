@@ -197,7 +197,7 @@ cnoremap <C-e> <End>
 
 " use space to toggle search highlights
 " http://vimbits.com/bits/52
-noremap <space> :set hlsearch! hlsearch?<CR>
+noremap <leader><space> :set hlsearch! hlsearch?<CR>
 
 " Map Q to repeat the last recorded macro
 " http://vimbits.com/bits/263
@@ -225,7 +225,7 @@ function! ToggleEvilCharacters()
   endif
 endfunction
 
-nnoremap <silent> <CR> :call ToggleEvilCharacters()<CR>
+noremap <space> :call ToggleEvilCharacters()<CR>
 
 " Expand path of current file in command mode
 " (there is already a variable to print file name as well: @%)
@@ -256,3 +256,5 @@ nnoremap <D-8> *<C-O>:AckFromSearch!<CR>
 " replace tabs with 4 or 2 spaces
 command! Tabs4spaces perldo s/\t/    /g
 command! Tabs2spaces perldo s/\t/  /g
+
+command! Resource source ~/.gvimrc
