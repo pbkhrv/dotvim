@@ -58,7 +58,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " set default font
-set guifont=Monaco:h12
+" set guifont=Monaco:h12
+set guifont=PragmataPro:h14
 " color molokai
 color herald
 
